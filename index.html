@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards Incríveis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text-color: #e2e8f0;
+      --card-front-color: #334155;
+      --card-back-color: #14b8a6;
+      --background: #1e293b;
+      --shadow: rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Bai Jamjuree', sans-serif;
+      background-color: var(--background);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem;
+    }
+
+    h1 {
+      margin-bottom: 3rem;
+      font-size: 2.8rem;
+      text-align: center;
+    }
+
+    #container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      width: 100%;
+      max-width: 1300px;
+    }
+
+    .cartao {
+      width: 280px;
+      height: 320px;
+      perspective: 1000px;
+    }
+
+    .cartao__conteudo {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease;
+      transform-style: preserve-3d;
+      cursor: pointer;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px var(--shadow);
+    }
+
+    .cartao.active .cartao__conteudo {
+      transform: rotateY(180deg);
+    }
+
+    .cartao__conteudo__pergunta,
+    .cartao__conteudo__resposta {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 1rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      backface-visibility: hidden;
+    }
+
+    .cartao__conteudo__pergunta {
+      background-color: var(--card-front-color);
+    }
+
+    .cartao__conteudo__resposta {
+      background-color: var(--card-back-color);
+      transform: rotateY(180deg);
+    }
+
+    .cartao__conteudo__pergunta h3,
+    .cartao__conteudo__resposta h3 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <h1>Flashcards Incríveis</h1>
+  <div id="container">
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Pergunta</h3>
+          <p>Qual é o menor país do mundo?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Resposta</h3>
+          <p>Vaticano</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Pergunta</h3>
+          <p>Quantos ossos tem o corpo humano?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Resposta</h3>
+          <p>206</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Pergunta</h3>
+          <p>Qual é o metal líquido à temperatura ambiente?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Resposta</h3>
+          <p>Mercúrio</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Pergunta</h3>
+          <p>Em que continente está o Egito?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Resposta</h3>
+          <p>África</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Pergunta</h3>
+          <p>Qual instrumento mede terremotos?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Resposta</h3>
+          <p>Sismógrafo</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Pergunta</h3>
+          <p>Qual é o maior oceano do planeta?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Resposta</h3>
+          <p>Oceano Pacífico</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Pergunta</h3>
+          <p>Quem foi Albert Einstein?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Resposta</h3>
+          <p>Físico teórico e criador da Teoria da Relatividade</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Pergunta</h3>
+          <p>O que é fotossíntese?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Resposta</h3>
+          <p>Processo de produção de energia pelas plantas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Projeto Flashcards &copy; 2025</footer>
+
+  <script>
+    const cards = document.querySelectorAll('.cartao');
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
